@@ -5,10 +5,9 @@ SHELL [ "/bin/bash", "-c" ]
 ENV SHELL=/bin/bash
 ENV MARKER_HOME=/opt/marker
 ENV MARKER_VERSION=1.2.7
+ENV PATH="$MARKER_HOME:/root/.local/bin:${PATH}"
 
 COPY sample.pdf docker-entrypoint.sh monitor_marker.sh restart_marker.sh /opt
-
-ENV PATH="/root/.local/bin:${PATH}"
 
 WORKDIR /opt
 
@@ -27,7 +26,6 @@ RUN apt update && \
     tar -zxf marker.tar.gz && \
     ln -s marker-$MARKER_VERSION marker && \
     rm -f marker.tar.gz && \
-    echo 'export PATH="$MARKER_HOME:$PATH"' >> ~/.bashrc && \
     chmod +x /opt/marker/*.py && \
     chmod +x /opt/*.sh && \
     apt remove wget -y && \
