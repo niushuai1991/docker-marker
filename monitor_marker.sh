@@ -2,7 +2,6 @@
 
 API_URL="http://127.0.0.1:80/marker/upload"
 FILE_PATH="/opt/sample.pdf"
-restart_script="/opt/restart_marker.sh"
 # Waiting for the service to run
 while true
 do
