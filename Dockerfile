@@ -4,7 +4,7 @@ SHELL [ "/bin/bash", "-c" ]
 
 ENV SHELL=/bin/bash
 ENV MARKER_HOME=/opt/marker
-ENV MARKER_VERSION=1.2.7
+ENV MARKER_VERSION=1.5.2
 ENV PATH="$MARKER_HOME:/root/.local/bin:${PATH}"
 
 COPY sample.pdf docker-entrypoint.sh monitor_marker.sh restart_marker.sh /opt
@@ -24,7 +24,7 @@ RUN apt update && \
     /root/.local/bin/poetry config virtualenvs.create false && \
     wget https://github.com/VikParuchuri/marker/archive/refs/tags/v$MARKER_VERSION.tar.gz -O marker.tar.gz && \
     tar -zxf marker.tar.gz && \
-    ln -s marker-$MARKER_VERSION marker && \
+    mv marker-$MARKER_VERSION marker && \
     rm -f marker.tar.gz && \
     chmod +x /opt/marker/*.py && \
     chmod +x /opt/*.sh && \
