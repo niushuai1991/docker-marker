@@ -7,7 +7,7 @@ ENV MARKER_HOME=/opt/marker
 ENV MARKER_VERSION=1.5.2
 ENV PATH="$MARKER_HOME:/root/.local/bin:${PATH}"
 
-COPY sample.pdf docker-entrypoint.sh monitor_marker.sh restart_marker.sh /opt
+COPY sample.pdf docker-entrypoint.sh monitor_marker.sh /opt
 
 WORKDIR /opt
 
