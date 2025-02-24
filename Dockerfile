@@ -4,7 +4,7 @@ SHELL [ "/bin/bash", "-c" ]
 
 ENV SHELL=/bin/bash
 ENV MARKER_HOME=/opt/marker
-ENV MARKER_VERSION=1.5.2
+ENV MARKER_VERSION=1.5.3
 ENV PATH="$MARKER_HOME:/root/.local/bin:${PATH}"
 
 COPY sample.pdf docker-entrypoint.sh monitor_marker.sh /opt
