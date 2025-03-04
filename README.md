@@ -14,6 +14,8 @@ services:
       - 80:80
     volumes:
       - /etc/localtime:/etc/localtime:ro
+    environment:
+      - POETRY_PYPI_URL=https://pypi.tuna.tsinghua.edu.cn/simple
     deploy:
       resources:
         limits:
